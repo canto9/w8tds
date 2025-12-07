@@ -55,3 +55,54 @@ with open(path, "w") as f:
     f.write(html_content)
 
 path
+
+
+<html>
+<head>
+    <title>Employee Data Visualization</title>
+</head>
+<body>
+
+<h2>Employee Data Visualization</h2>
+<p>Email for verification: <b>23f2000738@ds.study.iitm.ac.in</b></p>
+
+<h3>Frequency Count for HR Department</h3>
+<p><b>HR Count:</b> 1</p>
+
+<h3>Histogram of Departments</h3>
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAHgCAYAAAB5fY51AAA..." />
+
+<hr>
+
+<h2>Python Code Used</h2>
+<pre><code>
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Sample dataset
+csv_text = """employee_id,department,region,performance_score,years_experience,satisfaction_rating
+EMP001,R&D,Africa,67.56,6,3.8
+EMP002,HR,Africa,69.41,1,4.3
+EMP003,Operations,North America,87.93,2,3
+EMP004,Finance,Asia Pacific,62.36,5,3.6
+EMP005,Finance,Asia Pacific,84.2,3,4.4
+"""
+
+# Load data
+df = pd.read_csv(pd.compat.StringIO(csv_text))
+
+# Frequency count for HR
+hr_count = (df['department'] == 'HR').sum()
+print("HR count:", hr_count)
+
+# Plot histogram
+plt.figure()
+df['department'].value_counts().plot(kind='bar')
+plt.title("Department Distribution")
+plt.xlabel("Department")
+plt.ylabel("Frequency")
+plt.show()
+</code></pre>
+
+</body>
+</html>
