@@ -1,0 +1,57 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import base64
+from io import BytesIO
+
+# Sample dataset as CSV text
+csv_text = """employee_id,department,region,performance_score,years_experience,satisfaction_rating
+EMP001,R&D,Africa,67.56,6,3.8
+EMP002,HR,Africa,69.41,1,4.3
+EMP003,Operations,North America,87.93,2,3
+EMP004,Finance,Asia Pacific,62.36,5,3.6
+EMP005,Finance,Asia Pacific,84.2,3,4.4
+"""
+
+# Load dataset
+df = pd.read_csv(BytesIO(csv_text.encode()))
+
+# Frequency count for HR
+hr_count = (df['department'] == 'HR').sum()
+
+# Plot histogram of department distribution
+plt.figure()
+df['department'].value_counts().plot(kind='bar')
+plt.xlabel("Department")
+plt.ylabel("Frequency")
+plt.title("Department Distribution")
+
+# Save plot to memory
+buffer = BytesIO()
+plt.savefig(buffer, format="png")
+buffer.seek(0)
+img_base64 = base64.b64encode(buffer.read()).decode('utf-8')
+
+# Create HTML content
+html_content = f"""
+<html>
+<head><title>Employee Visualization</title></head>
+<body>
+<h2>Employee Data Visualization</h2>
+<p>Email for verification: 23f2000738@ds.study.iitm.ac.in</p>
+<p><b>Frequency count for HR department:</b> {hr_count}</p>
+<h3>Department Distribution Histogram</h3>
+<img src="data:image/png;base64,{img_base64}" />
+<pre>
+# Python Code Used
+{open(__file__,'r').read() if '__file__' in globals() else "Displayed in ChatGPT response."}
+</pre>
+</body>
+</html>
+"""
+
+# Save HTML file
+path = "/mnt/data/employee_visualization.html"
+with open(path, "w") as f:
+    f.write(html_content)
+
+path
