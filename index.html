@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Quarterly Earnings — Reveal.js</title>
+
+  <!-- Reveal.js from CDN (no build step required) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/theme/solarized.css" id="theme">
+
+  <!-- Highlight.js for code highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+
+  <!-- MathJax for math rendering -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* small visual tweaks */
+    .speaker-email { font-weight: 700; color: #2a6f97; }
+    pre.hljs { max-height: 360px; overflow:auto; }
+  </style>
+</head>
+<body>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title slide -->
+      <section>
+        <h1>Quarterly Earnings Report — Q4</h1>
+        <h3>Technical Consultant — Stakeholder Presentation</h3>
+        <p class="speaker-email">Contact: 23f2000738@ds.study.iitm.ac.in</p>
+        <aside class="notes">
+          Introduce yourself and purpose. Mention that slides are interactive and contain code snippets and formulas.
+        </aside>
+      </section>
+
+      <!-- Markdown slide embedded (uses data-markdown) -->
+      <section data-markdown>
+        <script type="text/template">
+## Executive Summary
+
+- Revenue grew **7.2% QoQ**.
+- Operating margin improved due to cost optimisation.
+- Key risks: FX exposure, interest rate volatility.
+
+> This slide is authored in **Markdown** — easy to edit for non-developers.
+
+        </script>
+        <aside class="notes">
+          Read through the bullets, emphasize margin improvements and call out the risks.
+        </aside>
+      </section>
+
+      <!-- Fragments (animated elements) -->
+      <section>
+        <h2>Highlights</h2>
+        <ul>
+          <li class="fragment">Revenue: $1.24B (↑7.2% QoQ)</li>
+          <li class="fragment">EBITDA: $210M (↑4.1% QoQ)</li>
+          <li class="fragment">Customer churn: 1.9% (stable)</li>
+        </ul>
+        <aside class="notes">
+          Use fragments to reveal one bullet at a time while speaking.
+        </aside>
+      </section>
+
+      <!-- Code sample with syntax highlighting -->
+      <section>
+        <h2>Example: Data extraction (Python)</h2>
+        <pre><code class="language-python">
+# sample: compute revenue growth
+import pandas as pd
+
+df = pd.read_csv('quarterly.csv')
+prev = df[df['quarter']=='Q3']['revenue'].sum()
+curr = df[df['quarter']=='Q4']['revenue'].sum()
+growth = (curr - prev) / prev
+print(f"Revenue growth: {growth:.2%}")
+        </code></pre>
+        <aside class="notes">
+          Explain the pipeline: read data, compute aggregates, print percentage. Mention where this runs in internal analytics.
+        </aside>
+      </section>
+
+      <!-- Mathematical formulas (MathJax) -->
+      <section>
+        <h2>Key Financial Formulas</h2>
+        <p>Operating Margin (OM):</p>
+        <p>\\[
+          \text{Operating Margin} = \frac{\text{Operating Income}}{\text{Revenue}} \times 100\%
+        \\]</p>
+
+        <p>Discounted Cash Flow (simplified):</p>
+        <p>\\[
+          \text{NPV} = \sum_{t=1}^{T} \frac{CF_t}{(1+r)^t}
+        \\]</p>
+
+        <aside class="notes">
+          Walk through the OM formula with numbers from the deck. For NPV, state discount rate r and horizon T.
+        </aside>
+      </section>
+
+      <!-- Slide with small demo chart (static image or embedded chart) -->
+      <section>
+        <h2>Revenue Trend (sample)</h2>
+        <p>Example chart generated via analytics — include an actual PNG or an embedded SVG here in the repo.</p>
+        <!-- Replace src below with your own chart asset path -->
+        <img src="assets/revenue_trend.png" alt="Revenue Trend (sample)" style="max-width:80%;">
+        <aside class="notes">
+          Mention the seasonal patterns visible in the chart.
+        </aside>
+      </section>
+
+      <!-- Closing slide -->
+      <section>
+        <h2>Questions & Next Steps</h2>
+        <ol>
+          <li class="fragment">Share full dataset with analytics team.</li>
+          <li class="fragment">Run stress tests for FX scenarios.</li>
+          <li class="fragment">Schedule follow up: management review.</li>
+        </ol>
+        <p class="speaker-email">Contact: 23f2000738@ds.study.iitm.ac.in</p>
+        <aside class="notes">
+          Reiterate contact details and action items.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js and plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+  <script>
+    Reveal.initialize({
+      hash: true,
+      plugins: [ RevealMarkdown, RevealHighlight ],
+      // If you want speaker notes visible in presenter mode:
+      // controls: true, progress: true, slideNumber: true
+    });
+
+    // Initialize highlight.js to highlight code blocks already present
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+    });
+  </script>
+
+  <!-- Load Reveal.js markdown + highlight plugins from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/markdown/markdown.esm.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/highlight/highlight.esm.js"></script>
+
+</body>
+</html>
