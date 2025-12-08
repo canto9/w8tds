@@ -17,4 +17,12 @@ This repository contains the correlation analysis and Excel heatmap for the auto
 5. Exported correlation matrix to new sheet  
 6. Applied conditional formatting (Red → White → Green)  
 7. Took screenshot and saved as `heatmap.png`  
-8. Exported correlation matrix as `correlation.csv`  
+8. Exported correlation matrix as `correlation.csv`
+
+
+# Seaborn Barplot Chart
+
+This repository contains the required Python script and output chart.
+
+**Email:** 23f2000738@ds.study.iitm.ac.in
+
