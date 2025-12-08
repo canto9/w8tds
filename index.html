@@ -1,160 +1,306 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Quarterly Earnings — Reveal.js</title>
-
-  <!-- Reveal.js from CDN (no build step required) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/theme/solarized.css" id="theme">
-
-  <!-- Highlight.js for code highlighting -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
-
-  <!-- MathJax for math rendering -->
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* small visual tweaks */
-    .speaker-email { font-weight: 700; color: #2a6f97; }
-    pre.hljs { max-height: 360px; overflow:auto; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4 2024 Quarterly Earnings Report</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
+    <style>
+        .reveal h1, .reveal h2, .reveal h3 {
+            text-transform: none;
+        }
+        .reveal .slides {
+            text-align: left;
+        }
+        .reveal .slides section {
+            padding: 20px;
+        }
+        .email-contact {
+            font-size: 0.7em;
+            color: #42affa;
+            margin-top: 20px;
+        }
+        .financial-metric {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #4ade80;
+        }
+        .metric-label {
+            font-size: 0.8em;
+            color: #e0e0e0;
+        }
+        .code-section {
+            background: #1e1e1e;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+    </style>
 </head>
 <body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Title Slide -->
+            <section data-background-gradient="linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+                <h1>Q4 2024 Quarterly Earnings Report</h1>
+                <h3>Financial Performance & Strategic Insights</h3>
+                <p style="margin-top: 40px;">Prepared by: Technical Consulting Team</p>
+                <p class="email-contact">Contact: 23f2000738@ds.study.iitm.ac.in</p>
+                <aside class="notes">
+                    Welcome everyone to our Q4 2024 earnings presentation. Today we'll review our financial performance, key metrics, and strategic initiatives. The presentation will take approximately 20 minutes.
+                </aside>
+            </section>
 
-  <div class="reveal">
-    <div class="slides">
+            <!-- Executive Summary with Markdown -->
+            <section data-markdown data-separator-notes="^Notes:">
+                <textarea data-template>
+                    ## Executive Summary
+                    
+                    ### Q4 2024 Highlights
+                    
+                    * **Revenue Growth**: 18.5% YoY increase
+                    * **Operating Margin**: Improved to 24.3%
+                    * **Customer Acquisition**: 2.4M new accounts
+                    * **Digital Transformation**: 87% of transactions now digital
+                    * **Cost Efficiency**: 12% reduction in operational costs
+                    
+                    ---
+                    
+                    Notes:
+                    This slide presents our key achievements for Q4. Note the strong revenue growth and the successful digital transformation initiative. Be prepared to discuss the cost efficiency improvements in detail.
+                </textarea>
+            </section>
 
-      <!-- Title slide -->
-      <section>
-        <h1>Quarterly Earnings Report — Q4</h1>
-        <h3>Technical Consultant — Stakeholder Presentation</h3>
-        <p class="speaker-email">Contact: 23f2000738@ds.study.iitm.ac.in</p>
-        <aside class="notes">
-          Introduce yourself and purpose. Mention that slides are interactive and contain code snippets and formulas.
-        </aside>
-      </section>
+            <!-- Financial Metrics with Fragments -->
+            <section>
+                <h2>Key Financial Metrics</h2>
+                <div class="financial-metric fragment fade-in">
+                    <div class="metric-label">Total Revenue</div>
+                    <div class="metric-value">$4.82 Billion</div>
+                    <div class="metric-label">↑ 18.5% YoY</div>
+                </div>
+                <div class="financial-metric fragment fade-in">
+                    <div class="metric-label">Net Income</div>
+                    <div class="metric-value">$1.17 Billion</div>
+                    <div class="metric-label">↑ 22.3% YoY</div>
+                </div>
+                <div class="financial-metric fragment fade-in">
+                    <div class="metric-label">Earnings Per Share (EPS)</div>
+                    <div class="metric-value">$3.45</div>
+                    <div class="metric-label">↑ 21.1% YoY</div>
+                </div>
+                <aside class="notes">
+                    Walk through each metric as it appears. Emphasize the strong YoY growth across all key indicators. The EPS growth of 21.1% exceeded analyst expectations by 8%.
+                </aside>
+            </section>
 
-      <!-- Markdown slide embedded (uses data-markdown) -->
-      <section data-markdown>
-        <script type="text/template">
-## Executive Summary
+            <!-- Mathematical Formulas -->
+            <section>
+                <h2>Financial Analysis Models</h2>
+                <h3>Return on Investment (ROI)</h3>
+                <p>Our Q4 ROI calculation:</p>
+                <div style="font-size: 1.2em; margin: 30px 0; text-align: center;">
+                    \[ ROI = \frac{Net\ Income - Investment\ Cost}{Investment\ Cost} \times 100\% \]
+                </div>
+                <div class="fragment fade-in">
+                    <h3>Sharpe Ratio</h3>
+                    <p>Risk-adjusted return measurement:</p>
+                    <div style="font-size: 1.2em; margin: 30px 0; text-align: center;">
+                        \[ Sharpe\ Ratio = \frac{R_p - R_f}{\sigma_p} \]
+                    </div>
+                    <p style="font-size: 0.8em;">Where \(R_p\) = portfolio return, \(R_f\) = risk-free rate, \(\sigma_p\) = portfolio std deviation</p>
+                </div>
+                <aside class="notes">
+                    These formulas represent our core analytical framework. The ROI formula shows our investment efficiency, while the Sharpe Ratio helps us understand risk-adjusted returns. Our Q4 Sharpe Ratio of 1.85 indicates excellent risk-adjusted performance.
+                </aside>
+            </section>
 
-- Revenue grew **7.2% QoQ**.
-- Operating margin improved due to cost optimisation.
-- Key risks: FX exposure, interest rate volatility.
+            <!-- Code Sample: Financial API Integration -->
+            <section>
+                <h2>Digital Infrastructure: API Integration</h2>
+                <div class="code-section">
+                    <pre><code class="python" data-trim data-line-numbers="1-3|5-8|10-15">
+# Financial Transaction Processing API
+import requests
+from decimal import Decimal
 
-> This slide is authored in **Markdown** — easy to edit for non-developers.
+def process_transaction(account_id, amount, transaction_type):
+    """Process financial transaction with validation"""
+    endpoint = "https://api.financial-platform.com/v2/transactions"
+    
+    # Validate transaction amount
+    if amount <= 0:
+        raise ValueError("Transaction amount must be positive")
+    
+    # Apply financial regulations compliance
+    if amount > 10000:
+        # Trigger AML (Anti-Money Laundering) checks
+        compliance_check = verify_aml_compliance(account_id, amount)
+        if not compliance_check:
+            return {"status": "pending_review", "reason": "AML verification"}
+    
+    # Execute transaction
+    payload = {
+        "account_id": account_id,
+        "amount": str(Decimal(amount)),
+        "type": transaction_type,
+        "timestamp": datetime.utcnow().isoformat()
+    }
+    
+    response = requests.post(endpoint, json=payload)
+    return response.json()
+                    </code></pre>
+                </div>
+                <aside class="notes">
+                    This code demonstrates our modernized transaction processing system. Note the built-in compliance checks and validation. The line-by-line highlighting will help explain the flow: first imports, then the function definition, and finally the transaction execution with AML compliance.
+                </aside>
+            </section>
 
-        </script>
-        <aside class="notes">
-          Read through the bullets, emphasize margin improvements and call out the risks.
-        </aside>
-      </section>
+            <!-- Code Sample: Data Analysis -->
+            <section>
+                <h2>Portfolio Analytics Dashboard</h2>
+                <div class="code-section">
+                    <pre><code class="javascript" data-trim data-line-numbers>
+// Real-time Portfolio Performance Calculator
+class PortfolioAnalyzer {
+    constructor(holdings) {
+        this.holdings = holdings;
+        this.totalValue = 0;
+    }
+    
+    calculatePerformance() {
+        this.totalValue = this.holdings.reduce((sum, asset) => {
+            return sum + (asset.quantity * asset.currentPrice);
+        }, 0);
+        
+        const totalCost = this.holdings.reduce((sum, asset) => {
+            return sum + (asset.quantity * asset.purchasePrice);
+        }, 0);
+        
+        const gain = this.totalValue - totalCost;
+        const gainPercent = (gain / totalCost) * 100;
+        
+        return {
+            totalValue: this.totalValue,
+            totalGain: gain,
+            gainPercentage: gainPercent.toFixed(2),
+            riskScore: this.calculateRiskScore()
+        };
+    }
+    
+    calculateRiskScore() {
+        // Diversification-based risk assessment
+        const assetTypes = new Set(this.holdings.map(h => h.type));
+        const diversificationScore = assetTypes.size / this.holdings.length;
+        return (diversificationScore * 100).toFixed(1);
+    }
+}
+                    </code></pre>
+                </div>
+                <aside class="notes">
+                    Our new portfolio analytics system provides real-time performance tracking. This JavaScript class is used in our client-facing dashboard, processing over 500,000 calculations per minute during peak trading hours.
+                </aside>
+            </section>
 
-      <!-- Fragments (animated elements) -->
-      <section>
-        <h2>Highlights</h2>
-        <ul>
-          <li class="fragment">Revenue: $1.24B (↑7.2% QoQ)</li>
-          <li class="fragment">EBITDA: $210M (↑4.1% QoQ)</li>
-          <li class="fragment">Customer churn: 1.9% (stable)</li>
-        </ul>
-        <aside class="notes">
-          Use fragments to reveal one bullet at a time while speaking.
-        </aside>
-      </section>
+            <!-- Strategic Initiatives with Fragments -->
+            <section>
+                <h2>Strategic Initiatives: 2025 Roadmap</h2>
+                <h3 class="fragment fade-in">Digital Transformation</h3>
+                <ul>
+                    <li class="fragment fade-in">AI-powered fraud detection system deployment</li>
+                    <li class="fragment fade-in">Mobile-first banking platform enhancement</li>
+                    <li class="fragment fade-in">Blockchain integration for cross-border payments</li>
+                </ul>
+                <h3 class="fragment fade-in" style="margin-top: 30px;">Market Expansion</h3>
+                <ul>
+                    <li class="fragment fade-in">Entry into 5 new emerging markets</li>
+                    <li class="fragment fade-in">Strategic partnerships with fintech startups</li>
+                    <li class="fragment fade-in">Sustainable finance product line launch</li>
+                </ul>
+                <aside class="notes">
+                    Our 2025 roadmap focuses on two pillars: digital transformation and market expansion. Each initiative has been carefully vetted and budgeted. The AI fraud detection system alone is expected to save $45M annually.
+                </aside>
+            </section>
 
-      <!-- Code sample with syntax highlighting -->
-      <section>
-        <h2>Example: Data extraction (Python)</h2>
-        <pre><code class="language-python">
-# sample: compute revenue growth
-import pandas as pd
+            <!-- Complex Formula: Black-Scholes -->
+            <section>
+                <h2>Options Pricing Model</h2>
+                <h3>Black-Scholes Formula</h3>
+                <p>Used for derivatives valuation in our trading desk:</p>
+                <div style="font-size: 1em; margin: 30px 0; text-align: center;">
+                    \[ C(S,t) = S_t N(d_1) - Ke^{-r(T-t)}N(d_2) \]
+                </div>
+                <div style="font-size: 0.9em; text-align: center;">
+                    \[ d_1 = \frac{\ln(\frac{S_t}{K}) + (r + \frac{\sigma^2}{2})(T-t)}{\sigma\sqrt{T-t}} \]
+                </div>
+                <div style="font-size: 0.9em; text-align: center; margin-top: 10px;">
+                    \[ d_2 = d_1 - \sigma\sqrt{T-t} \]
+                </div>
+                <p style="font-size: 0.7em; margin-top: 30px;">
+                    Where: \(S_t\) = current stock price, \(K\) = strike price, \(r\) = risk-free rate, 
+                    \(T-t\) = time to maturity, \(\sigma\) = volatility, \(N()\) = cumulative normal distribution
+                </p>
+                <aside class="notes">
+                    The Black-Scholes model is fundamental to our options trading operations. Our enhanced implementation includes real-time volatility adjustments and has processed over $2.3B in derivatives this quarter.
+                </aside>
+            </section>
 
-df = pd.read_csv('quarterly.csv')
-prev = df[df['quarter']=='Q3']['revenue'].sum()
-curr = df[df['quarter']=='Q4']['revenue'].sum()
-growth = (curr - prev) / prev
-print(f"Revenue growth: {growth:.2%}")
-        </code></pre>
-        <aside class="notes">
-          Explain the pipeline: read data, compute aggregates, print percentage. Mention where this runs in internal analytics.
-        </aside>
-      </section>
-
-      <!-- Mathematical formulas (MathJax) -->
-      <section>
-        <h2>Key Financial Formulas</h2>
-        <p>Operating Margin (OM):</p>
-        <p>\\[
-          \text{Operating Margin} = \frac{\text{Operating Income}}{\text{Revenue}} \times 100\%
-        \\]</p>
-
-        <p>Discounted Cash Flow (simplified):</p>
-        <p>\\[
-          \text{NPV} = \sum_{t=1}^{T} \frac{CF_t}{(1+r)^t}
-        \\]</p>
-
-        <aside class="notes">
-          Walk through the OM formula with numbers from the deck. For NPV, state discount rate r and horizon T.
-        </aside>
-      </section>
-
-      <!-- Slide with small demo chart (static image or embedded chart) -->
-      <section>
-        <h2>Revenue Trend (sample)</h2>
-        <p>Example chart generated via analytics — include an actual PNG or an embedded SVG here in the repo.</p>
-        <!-- Replace src below with your own chart asset path -->
-        <img src="assets/revenue_trend.png" alt="Revenue Trend (sample)" style="max-width:80%;">
-        <aside class="notes">
-          Mention the seasonal patterns visible in the chart.
-        </aside>
-      </section>
-
-      <!-- Closing slide -->
-      <section>
-        <h2>Questions & Next Steps</h2>
-        <ol>
-          <li class="fragment">Share full dataset with analytics team.</li>
-          <li class="fragment">Run stress tests for FX scenarios.</li>
-          <li class="fragment">Schedule follow up: management review.</li>
-        </ol>
-        <p class="speaker-email">Contact: 23f2000738@ds.study.iitm.ac.in</p>
-        <aside class="notes">
-          Reiterate contact details and action items.
-        </aside>
-      </section>
-
+            <!-- Closing Slide -->
+            <section data-background-gradient="linear-gradient(135deg, #667eea 0%, #764ba2 100%)">
+                <h2>Q4 2024: Strong Performance, Promising Future</h2>
+                <div class="fragment fade-in">
+                    <h3>Key Takeaways</h3>
+                    <ul>
+                        <li>18.5% revenue growth exceeds market expectations</li>
+                        <li>Digital transformation driving efficiency gains</li>
+                        <li>Strong position for 2025 expansion initiatives</li>
+                        <li>Commitment to sustainable and responsible banking</li>
+                    </ul>
+                </div>
+                <div class="fragment fade-in" style="margin-top: 50px;">
+                    <h3>Questions & Discussion</h3>
+                    <p class="email-contact">Contact: 23f2000738@ds.study.iitm.ac.in</p>
+                </div>
+                <aside class="notes">
+                    Conclude by thanking the stakeholders. Be prepared for questions about the digital transformation timeline, market expansion costs, and 2025 revenue projections. The investor relations team has prepared detailed backup slides if needed.
+                </aside>
+            </section>
+        </div>
     </div>
-  </div>
 
-  <!-- Reveal.js and plugins -->
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/math/math.min.js"></script>
 
-  <script>
-    Reveal.initialize({
-      hash: true,
-      plugins: [ RevealMarkdown, RevealHighlight ],
-      // If you want speaker notes visible in presenter mode:
-      // controls: true, progress: true, slideNumber: true
-    });
-
-    // Initialize highlight.js to highlight code blocks already present
-    document.addEventListener('DOMContentLoaded', (event) => {
-      document.querySelectorAll('pre code').forEach((block) => {
-        hljs.highlightBlock(block);
-      });
-    });
-  </script>
-
-  <!-- Load Reveal.js markdown + highlight plugins from CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/markdown/markdown.esm.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/plugin/highlight/highlight.esm.js"></script>
-
+    <script>
+        Reveal.initialize({
+            hash: true,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            slideNumber: true,
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+            math: {
+                mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+                config: 'TeX-AMS_HTML-full',
+                TeX: {
+                    Macros: {
+                        R: '\\mathbb{R}',
+                        set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
